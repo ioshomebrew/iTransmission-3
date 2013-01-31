@@ -1,0 +1,11 @@
+--- utp.h	2013-01-08 17:32:13.000000000 -0800
++++ utpnew.h	2013-01-19 17:41:52.000000000 -0800
+@@ -113,7 +113,7 @@
+ 
+ // Write bytes to the uTP socket.
+ // Returns true if the socket is still writable.
+-bool UTP_Write(struct UTPSocket *socket, size_t count);
++// bool UTP_Write(struct UTPSocket *socket, size_t count);
+ 
+ // Notify the uTP socket of buffer drain
+ void UTP_RBDrained(struct UTPSocket *socket);
