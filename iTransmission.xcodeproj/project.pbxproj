@@ -738,7 +738,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/bin/mkdir -p $CONFIGURATION_BUILD_DIR/Payload\n/bin/cp -R $CONFIGURATION_BUILD_DIR/iTransmission.app $CONFIGURATION_BUILD_DIR/Payload\n/bin/cp Resources/itransmission-icon-large.png $CONFIGURATION_BUILD_DIR/iTunesArtwork\ncd $CONFIGURATION_BUILD_DIR\n/usr/bin/zip -r iTransmission.ipa Payload iTunesArtwork\n/bin/cp iTransmission.ipa /Users/ccp/iTransmission.ipa";
+			shellScript = "/bin/mkdir -p $CONFIGURATION_BUILD_DIR/Payload\n/bin/cp -R $CONFIGURATION_BUILD_DIR/iTransmission.app $CONFIGURATION_BUILD_DIR/Payload\n/bin/cp Resources/itransmission-icon-large.png $CONFIGURATION_BUILD_DIR/iTunesArtwork\ncd $CONFIGURATION_BUILD_DIR\n/usr/bin/zip -r iTransmission.ipa Payload iTunesArtwork";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -810,15 +810,16 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iTransmission_Prefix.pch;
-				HEADER_SEARCH_PATHS = "$(SRCROOT)/libraries/$(CURRENT_ARCH)/include";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/libraries/out/$(CURRENT_ARCH)/include";
 				INFOPLIST_FILE = "iTransmission-Info.plist";
-				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/libraries/$(CURRENT_ARCH)/lib";
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/libraries/out/$(CURRENT_ARCH)/lib";
 				OTHER_LDFLAGS = (
 					"-ltransmission",
 					"-levent",
@@ -829,10 +830,8 @@
 					"-lnatpmp",
 					"-ldht",
 					"-lminiupnp",
-					"-lutp",
 				);
 				PRODUCT_NAME = iTransmission;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -842,13 +841,14 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iTransmission_Prefix.pch;
-				HEADER_SEARCH_PATHS = "$(SRCROOT)/libraries/$(CURRENT_ARCH)/include";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/libraries/out/$(CURRENT_ARCH)/include";
 				INFOPLIST_FILE = "iTransmission-Info.plist";
-				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/libraries/$(CURRENT_ARCH)/lib";
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/libraries/out/$(CURRENT_ARCH)/lib";
 				OTHER_LDFLAGS = (
 					"-ltransmission",
 					"-levent",
@@ -859,10 +859,8 @@
 					"-lnatpmp",
 					"-ldht",
 					"-lminiupnp",
-					"-lutp",
 				);
 				PRODUCT_NAME = iTransmission;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -890,13 +888,14 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iTransmission_Prefix.pch;
-				HEADER_SEARCH_PATHS = "$(SRCROOT)/libraries/$(CURRENT_ARCH)/include";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/libraries/out/$(CURRENT_ARCH)/include";
 				INFOPLIST_FILE = "iTransmission-Info.plist";
-				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/libraries/$(CURRENT_ARCH)/lib";
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/libraries/out/$(CURRENT_ARCH)/lib";
 				OTHER_LDFLAGS = (
 					"-ltransmission",
 					"-levent",
@@ -907,10 +906,8 @@
 					"-lnatpmp",
 					"-ldht",
 					"-lminiupnp",
-					"-lutp",
 				);
 				PRODUCT_NAME = iTransmission;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -919,9 +916,13 @@
 		740E5F92129E6902008C61FF /* Distribution */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = IPA;
+				SDKROOT = iphoneos;
 				ZERO_LINK = NO;
 			};
 			name = Distribution;
@@ -929,19 +930,27 @@
 		7471DCFB126F27A200CB0653 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = IPA;
+				SDKROOT = iphoneos;
 			};
 			name = Debug;
 		};
 		7471DCFC126F27A200CB0653 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = IPA;
+				SDKROOT = iphoneos;
 				ZERO_LINK = NO;
 			};
 			name = Release;
