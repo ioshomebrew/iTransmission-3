@@ -163,8 +163,9 @@
     UIActionSheet *sheet = [[[UIActionSheet alloc] initWithTitle:@"Add from..." delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil] autorelease];
     [sheet addButtonWithTitle:@"Web"];
     [sheet addButtonWithTitle:@"Magnet"];
+    [sheet addButtonWithTitle:@"URL"];
     [sheet addButtonWithTitle:@"Cancel"];
-    [sheet setCancelButtonIndex:2];
+    [sheet setCancelButtonIndex:3];
     [sheet setTag:ADD_TAG];
     [sheet showFromToolbar:self.navigationController.toolbar];
 }
@@ -361,6 +362,11 @@
     [self.navigationController pushViewController:web animated:YES];
 }
 
+- (void)addFromURLClicked
+{
+    [self addFromURLWithExistingURL:@"" message:@"Please enter the existing torrent's URL"];
+}
+
 - (void)addFromURLWithExistingURL:(NSString*)url message:(NSString*)msg
 {
     UIAlertView *dialog = [[[UIAlertView alloc] initWithTitle:@"Add from URL" message:msg delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil] autorelease];
@@ -486,6 +492,9 @@
                 case 1: {
                     [self addFromMagnetClicked];
                     break;
+                }
+                case 2: {
+                    [self addFromURLClicked];
                 }
                 default: 
                     return;

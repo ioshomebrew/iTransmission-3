@@ -45,6 +45,7 @@
 - (void)prefButtonClicked:(id)sender;
 
 - (void)addFromWebClicked;
+- (void)addFromURLClicked;
 - (void)addFromURLWithExistingURL:(NSString*)url message:(NSString*)msg;
 - (void)addFromMagnetClicked;
 - (void)addFromMagnetWithExistingMagnet:(NSString*)magnet message:(NSString*)msg;
