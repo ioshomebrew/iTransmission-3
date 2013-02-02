@@ -819,6 +819,7 @@
 				GCC_PREFIX_HEADER = iTransmission_Prefix.pch;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/libraries/out/$(CURRENT_ARCH)/include";
 				INFOPLIST_FILE = "iTransmission-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/libraries/out/$(CURRENT_ARCH)/lib";
 				OTHER_LDFLAGS = (
 					"-ltransmission",
@@ -848,6 +849,7 @@
 				GCC_PREFIX_HEADER = iTransmission_Prefix.pch;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/libraries/out/$(CURRENT_ARCH)/include";
 				INFOPLIST_FILE = "iTransmission-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/libraries/out/$(CURRENT_ARCH)/lib";
 				OTHER_LDFLAGS = (
 					"-ltransmission",
@@ -895,6 +897,7 @@
 				GCC_PREFIX_HEADER = iTransmission_Prefix.pch;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/libraries/out/$(CURRENT_ARCH)/include";
 				INFOPLIST_FILE = "iTransmission-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/libraries/out/$(CURRENT_ARCH)/lib";
 				OTHER_LDFLAGS = (
 					"-ltransmission",
