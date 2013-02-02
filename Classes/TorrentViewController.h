@@ -44,12 +44,10 @@
 - (void)addButtonClicked:(id)sender;
 - (void)prefButtonClicked:(id)sender;
 
-- (void)addFromURLClicked;
+- (void)addFromWebClicked;
 - (void)addFromURLWithExistingURL:(NSString*)url message:(NSString*)msg;
 - (void)addFromMagnetClicked;
 - (void)addFromMagnetWithExistingMagnet:(NSString*)magnet message:(NSString*)msg;
-- (void)addFromFilesystemClicked;
-
 - (void)activityCounterDidChange:(NSNotification*)notif;
 - (void)newTorrentAdded:(NSNotification*)notif;
 - (void)removedTorrents:(NSNotification*)notif;

@@ -41,6 +41,9 @@
     
     // load request
     [webView loadRequest:request];
+    
+    // make network icon visible
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
 }
 
 - (void)viewDidLoad
@@ -57,6 +60,9 @@
     
     // load request
     [webView loadRequest:request];
+    
+    // show loading icon
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
 }
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
@@ -64,6 +70,7 @@
     NSURL *requestedURL = [request URL];
     NSString *scheme = [requestedURL scheme];
     NSString *fileExtension = [requestedURL pathExtension];
+    NSString *URL = [requestedURL absoluteString];
     
     if(navigationType == UIWebViewNavigationTypeLinkClicked)
     {
@@ -95,6 +102,21 @@
     }
     
     return TRUE;
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    // update urlbar
+    urlbar.text = webView.request.URL.absoluteString;
+    
+    // make the loading icon disappear
+    [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
 }
 
 - (void)didReceiveMemoryWarning

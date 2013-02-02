@@ -161,11 +161,10 @@
 - (void)addButtonClicked:(id)sender
 {
     UIActionSheet *sheet = [[[UIActionSheet alloc] initWithTitle:@"Add from..." delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:nil] autorelease];
-    [sheet addButtonWithTitle:@"URL"];
-    [sheet addButtonWithTitle:@"Filesystem"];
+    [sheet addButtonWithTitle:@"Web"];
     [sheet addButtonWithTitle:@"Magnet"];
     [sheet addButtonWithTitle:@"Cancel"];
-    [sheet setCancelButtonIndex:3];
+    [sheet setCancelButtonIndex:2];
     [sheet setTag:ADD_TAG];
     [sheet showFromToolbar:self.navigationController.toolbar];
 }
@@ -355,7 +354,7 @@
 	self.selectedIndexPaths = nil;
 }
 
-- (void)addFromURLClicked
+- (void)addFromWebClicked
 {
     // [self addFromURLWithExistingURL:@"" message:@"Please enter the torrent's URL below. "];
     WebBrowser *web = [[WebBrowser alloc] initWithNibName:@"WebBrowser" bundle:nil :self.navigationController: self.controller];
@@ -469,14 +468,6 @@
     [self addFromMagnetWithExistingMagnet:@"" message:@"Please enter the magnet link below. "];
 }
 
-- (void)addFromFilesystemClicked
-{
-    TorrentAutoDiscoveryController *c = [[[TorrentAutoDiscoveryController alloc] initWithNibName:@"TorrentAutoDiscoveryController" bundle:nil] autorelease];
-    c.controller = self.controller;
-    UINavigationController *navc = [[[UINavigationController alloc] initWithRootViewController:c] autorelease];
-    [self presentModalViewController:navc animated:YES];
-}
-
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -489,14 +480,10 @@
         case ADD_TAG: {
             switch (buttonIndex) {
                 case 0: {
-                    [self addFromURLClicked];
+                    [self addFromWebClicked];
                     break;
                 }
                 case 1: {
-                    [self addFromFilesystemClicked];
-                    break;
-                }
-                case 2: {
                     [self addFromMagnetClicked];
                     break;
                 }
