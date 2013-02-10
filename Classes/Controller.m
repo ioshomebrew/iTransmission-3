@@ -336,28 +336,6 @@ static void signal_handler(int sig) {
     
     UIBackgroundTaskIdentifier newTaskId = UIBackgroundTaskInvalid;
     //NSLog(@"runInBackgroung : %@",runInBackgroung ? @"YES" : @"NO");
-    if (runInBackgroung) {
-        
-        newTaskId = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{ 
-            
-            
-            UILocalNotification *localNotif = [[UILocalNotification alloc] init];
-            if (localNotif == nil)
-                return;
-            localNotif.fireDate = nil;//Immediately
-            localNotif.alertBody = [NSString stringWithFormat:@"iTransmission will exit in %fs.",[[UIApplication sharedApplication] backgroundTimeRemaining]];
-            localNotif.soundName = UILocalNotificationDefaultSoundName;
-            
-            // Schedule the notification
-            [[UIApplication sharedApplication] scheduleLocalNotification:localNotif];
-            [localNotif release];
-            
-            //[self stopLoading];
-            
-            [[UIApplication sharedApplication] endBackgroundTask:bgTaskId]; 
-            bgTaskId = UIBackgroundTaskInvalid;
-        }];
-    }
     
     if (newTaskId != UIBackgroundTaskInvalid && bgTaskId != UIBackgroundTaskInvalid)
 		[[UIApplication sharedApplication] endBackgroundTask: bgTaskId];
