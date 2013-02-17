@@ -120,6 +120,9 @@
 		CE0BACB516B8E29900EFFCD3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CE0BACB416B8E29900EFFCD3 /* Default-568h@2x.png */; };
 		CE0BACB916B8E39C00EFFCD3 /* WebBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0BACB716B8E39C00EFFCD3 /* WebBrowser.m */; };
 		CE0BACBA16B8E39C00EFFCD3 /* WebBrowser.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE0BACB816B8E39C00EFFCD3 /* WebBrowser.xib */; };
+		CE206DC216CCB4EE00F1F27B /* FileListController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE206DC116CCB4EE00F1F27B /* FileListController_iPad.xib */; };
+		CE206DC516CCB5D500F1F27B /* PrefViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE206DC416CCB5D500F1F27B /* PrefViewController_iPad.xib */; };
+		CE206DC716CCB97B00F1F27B /* TorrentViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE206DC616CCB97B00F1F27B /* TorrentViewController_iPad.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -279,6 +282,9 @@
 		CE0BACB616B8E39C00EFFCD3 /* WebBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebBrowser.h; sourceTree = "<group>"; };
 		CE0BACB716B8E39C00EFFCD3 /* WebBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebBrowser.m; sourceTree = "<group>"; };
 		CE0BACB816B8E39C00EFFCD3 /* WebBrowser.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebBrowser.xib; sourceTree = "<group>"; };
+		CE206DC116CCB4EE00F1F27B /* FileListController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FileListController_iPad.xib; sourceTree = "<group>"; };
+		CE206DC416CCB5D500F1F27B /* PrefViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PrefViewController_iPad.xib; sourceTree = "<group>"; };
+		CE206DC616CCB97B00F1F27B /* TorrentViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TorrentViewController_iPad.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -525,9 +531,12 @@
 			isa = PBXGroup;
 			children = (
 				7E255BDB13CC3BFC009783B4 /* FileListViewController.xib */,
+				CE206DC116CCB4EE00F1F27B /* FileListController_iPad.xib */,
 				7E9B37EA13960ABF006D55C7 /* TorrentAutoDiscoveryController.xib */,
 				7448A68A1258AE69009BAF99 /* PrefViewController.xib */,
+				CE206DC416CCB5D500F1F27B /* PrefViewController_iPad.xib */,
 				7448A68B1258AE69009BAF99 /* TorrentViewController.xib */,
+				CE206DC616CCB97B00F1F27B /* TorrentViewController_iPad.xib */,
 				742455E2125A1732003EACB1 /* DetailViewController.xib */,
 				7469A46012700133005A404D /* BandwidthController.xib */,
 			);
@@ -721,6 +730,9 @@
 				4E7D4BA2146C003E0055906A /* Icon@2x.png in Resources */,
 				CE0BACB516B8E29900EFFCD3 /* Default-568h@2x.png in Resources */,
 				CE0BACBA16B8E39C00EFFCD3 /* WebBrowser.xib in Resources */,
+				CE206DC216CCB4EE00F1F27B /* FileListController_iPad.xib in Resources */,
+				CE206DC516CCB5D500F1F27B /* PrefViewController_iPad.xib in Resources */,
+				CE206DC716CCB97B00F1F27B /* TorrentViewController_iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

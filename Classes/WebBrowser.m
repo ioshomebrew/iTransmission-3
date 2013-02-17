@@ -70,10 +70,12 @@
     NSURL *requestedURL = [request URL];
     NSString *scheme = [requestedURL scheme];
     NSString *fileExtension = [requestedURL pathExtension];
-    NSString *URL = [requestedURL absoluteString];
     
     if(navigationType == UIWebViewNavigationTypeLinkClicked)
     {
+        // make network icon visible
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+        
         if([scheme isEqualToString:@"magnet"])
         {
             self.magnet = [requestedURL absoluteString];

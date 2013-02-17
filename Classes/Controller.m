@@ -326,21 +326,6 @@ static void signal_handler(int sig) {
      Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
      If your application supports background execution, called instead of applicationWillTerminate: when the user quits.
      */
-    BOOL runInBackgroung = NO;
-    for (Torrent *torrent in fTorrents) {
-        if ([torrent isActive] && ![torrent isComplete]) {
-            runInBackgroung = YES;
-            break;
-        }
-    }
-    
-    UIBackgroundTaskIdentifier newTaskId = UIBackgroundTaskInvalid;
-    //NSLog(@"runInBackgroung : %@",runInBackgroung ? @"YES" : @"NO");
-    
-    if (newTaskId != UIBackgroundTaskInvalid && bgTaskId != UIBackgroundTaskInvalid)
-		[[UIApplication sharedApplication] endBackgroundTask: bgTaskId];
-    
-	bgTaskId = newTaskId;
 }
 
 
