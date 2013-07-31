@@ -27,6 +27,7 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
+		3A79E43417A8EE1100DACD5D /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A79E43317A8EE1100DACD5D /* MainWindow-iPad.xib */; };
 		4E7D4B9D146C003E0055906A /* Icon-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E7D4B97146C003E0055906A /* Icon-iPad.png */; };
 		4E7D4B9E146C003E0055906A /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E7D4B98146C003E0055906A /* Icon-Small-50.png */; };
 		4E7D4B9F146C003E0055906A /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E7D4B99146C003E0055906A /* Icon-Small.png */; };
@@ -144,6 +145,7 @@
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* iTransmission_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTransmission_Prefix.pch; sourceTree = "<group>"; };
+		3A79E43317A8EE1100DACD5D /* MainWindow-iPad.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "MainWindow-iPad.xib"; path = "Resources/iPad/MainWindow-iPad.xib"; sourceTree = "<group>"; };
 		4E7D4B97146C003E0055906A /* Icon-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-iPad.png"; sourceTree = "<group>"; };
 		4E7D4B98146C003E0055906A /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
 		4E7D4B99146C003E0055906A /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
@@ -349,6 +351,7 @@
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
+				3A79E43217A8EE1100DACD5D /* iPad */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 			);
@@ -391,6 +394,14 @@
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3A79E43217A8EE1100DACD5D /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				3A79E43317A8EE1100DACD5D /* MainWindow-iPad.xib */,
+			);
+			name = iPad;
 			sourceTree = "<group>";
 		};
 		4E7D4B96146C003E0055906A /* Icons */ = {
@@ -733,6 +744,7 @@
 				CE206DC216CCB4EE00F1F27B /* FileListController_iPad.xib in Resources */,
 				CE206DC516CCB5D500F1F27B /* PrefViewController_iPad.xib in Resources */,
 				CE206DC716CCB97B00F1F27B /* TorrentViewController_iPad.xib in Resources */,
+				3A79E43417A8EE1100DACD5D /* MainWindow-iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -822,8 +834,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Benjamin Berman (XZF9UC4R7Z)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Benjamin Berman (XZF9UC4R7Z)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -831,7 +843,7 @@
 				GCC_PREFIX_HEADER = iTransmission_Prefix.pch;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/libraries/out/$(CURRENT_ARCH)/include";
 				INFOPLIST_FILE = "iTransmission-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/libraries/out/$(CURRENT_ARCH)/lib";
 				OTHER_LDFLAGS = (
 					"-ltransmission",
@@ -845,7 +857,10 @@
 					"-lminiupnp",
 				);
 				PRODUCT_NAME = iTransmission;
+				PROVISIONING_PROFILE = "D2F955E7-02BB-4484-94F0-D5214DCD0954";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D2F955E7-02BB-4484-94F0-D5214DCD0954";
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -854,14 +869,14 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Benjamin Berman (XZF9UC4R7Z)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Benjamin Berman (XZF9UC4R7Z)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iTransmission_Prefix.pch;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/libraries/out/$(CURRENT_ARCH)/include";
 				INFOPLIST_FILE = "iTransmission-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/libraries/out/$(CURRENT_ARCH)/lib";
 				OTHER_LDFLAGS = (
 					"-ltransmission",
@@ -875,7 +890,10 @@
 					"-lminiupnp",
 				);
 				PRODUCT_NAME = iTransmission;
+				PROVISIONING_PROFILE = "D2F955E7-02BB-4484-94F0-D5214DCD0954";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "368C0A6E-BEDA-420E-9858-D7551D2A0986";
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -902,14 +920,14 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Benjamin Berman (XZF9UC4R7Z)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Benjamin Berman (XZF9UC4R7Z)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iTransmission_Prefix.pch;
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/libraries/out/$(CURRENT_ARCH)/include";
 				INFOPLIST_FILE = "iTransmission-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/libraries/out/$(CURRENT_ARCH)/lib";
 				OTHER_LDFLAGS = (
 					"-ltransmission",
@@ -923,7 +941,10 @@
 					"-lminiupnp",
 				);
 				PRODUCT_NAME = iTransmission;
+				PROVISIONING_PROFILE = "D2F955E7-02BB-4484-94F0-D5214DCD0954";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "368C0A6E-BEDA-420E-9858-D7551D2A0986";
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Distribution;
