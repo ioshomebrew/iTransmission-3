@@ -126,6 +126,11 @@ static void signal_handler(int sig) {
 
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
 {
+    if ([[url scheme] isEqualToString:@"magnet"]) {
+        [self addTorrentFromManget:[url absoluteString]];
+        return YES;
+    }
+    
     NSLog(@"URL %@",url);
     NSError *error = nil;
     NSString *path = [self randomTorrentPath];

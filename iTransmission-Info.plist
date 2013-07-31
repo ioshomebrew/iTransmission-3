@@ -54,6 +54,7 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>torrent</string>
+				<string>magnet</string>
 			</array>
 		</dict>
 	</array>
